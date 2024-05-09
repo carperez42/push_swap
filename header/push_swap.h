@@ -6,7 +6,7 @@
 /*   By: carperez <carperez@student.45madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 12:46:47 by carperez          #+#    #+#             */
-/*   Updated: 2024/05/02 11:20:22 by carperez         ###   ########.fr       */
+/*   Updated: 2024/05/09 17:48:03 by carperez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,29 +76,27 @@ typedef struct s_pushswap
 
 //in 000-main.c file
 void	*ft_node_creator(int nInt);
-//in 001-error_codes.c file
-void	ft_error_msg(int nError);
-//in 002-input_verification.c file
+//in 001-input_verification.c file
 int		ft_input_analizer(t_pushswap *dPushswap);
-//in 003-sorting_verification.c file
+//in 002-sorting_verification.c file
 void	ft_serie_analizer(t_pushswap *dPushswap);
-//in 004-stacks_management.c file
+//in 003-stacks_management.c file
 void	ft_index_updater(t_catalog *pStack);
 void	ft_mintargets_finder(t_catalog *pRef, t_catalog pTrg);
 void	ft_maxtargets_finder(t_catalog *pRef, t_catalog pTrg);
 void	ft_cost_updater(t_catalog *pRef, t_catalog pTrg);
-//in 005-stacks_management.c file
+//in 004-stacks_management.c file
 void	ft_a2b_executions(t_pushswap *dPushswap);
 void	ft_update_stack(t_pushswap *dPushswap, char cDestiny);
-//in 006-push_operations.c file
+//in 005-push_operations.c file
 void	ft_push_onestack(t_pushswap *dPushswap, char cStack);
 void	ft_push_provision(t_pushswap *dPushswap, t_node *pGoal, char cMode);
-//in 007-rotative_operations.c file
+//in 006-rotative_operations.c file
 void	ft_rot_onestack(t_pushswap *dPushswap, char *sStack);
 void	ft_rot_twostack(t_pushswap *dPushswap);
 void	ft_rev_onestack(t_pushswap *dPushswap, char *sStack);
 void	ft_rev_twostack(t_pushswap *dPushswap);
-//in 008-swap_operations.c file
+//in 007-swap_operations.c file
 void	ft_swap_onestack(t_pushswap *dPushswap, char *sStack);
 void	ft_swap_twostack(t_pushswap *dPushswap);
 #endif
