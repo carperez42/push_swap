@@ -6,7 +6,7 @@
 /*   By: carperez <carperez@student.45madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/28 17:59:08 by carperez          #+#    #+#             */
-/*   Updated: 2024/05/09 16:24:04 by carperez         ###   ########.fr       */
+/*   Updated: 2024/05/10 09:30:24 by carperez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ void	ft_push_onestack(t_pushswap *dPushswap, char cDestiny)
 		ft_addnode_front(&p_destiny, p_origin->p_current);
 		p_origin->n_nodes -= 1;
 		dPushswap->n_ops += 1;
-		ft_printf("\033[38;5;208mp%c\033[1;0m\n", cDestiny);
+		ft_printf("p%c\n", cDestiny);
 	}
 }
 

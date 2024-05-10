@@ -6,7 +6,7 @@
 /*   By: carperez <carperez@student.45madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/28 17:58:02 by carperez          #+#    #+#             */
-/*   Updated: 2024/05/09 16:24:49 by carperez         ###   ########.fr       */
+/*   Updated: 2024/05/10 09:27:16 by carperez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void	ft_swap_onestack(t_pushswap *dPushswap, char *sStack)
 		if (!(ft_strncmp(sStack, "a", 2)) || !(ft_strncmp(sStack, "b", 2)))
 		{
 			dPushswap->n_ops += 1;
-			ft_printf("\033[38;5;206ms%s\033[1;0m\n", sStack);
+			ft_printf("s%s\n", sStack);
 		}
 	}
 }
@@ -48,7 +48,7 @@ void	ft_swap_twostack(t_pushswap *dPushswap)
 	if (dPushswap->l_stack_a.n_nodes > 1 || dPushswap->l_stack_b.n_nodes > 1)
 	{
 		dPushswap->n_ops += 1;
-		ft_printf("\033[38;5;206mss\033[1;0m\n");
+		ft_printf("ss\n");
 	}
 }
 //END
