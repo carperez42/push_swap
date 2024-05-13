@@ -6,7 +6,7 @@
 /*   By: carperez <carperez@student.45madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 12:46:47 by carperez          #+#    #+#             */
-/*   Updated: 2024/05/09 17:48:03 by carperez         ###   ########.fr       */
+/*   Updated: 2024/05/13 18:44:02 by carperez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,6 @@ typedef struct s_pushswap
 {
 	int			f_error;
 	int			n_inputs;
-	int			n_ops;
 	char		**a_inputs;
 	char		*p_diglist;
 	char		**a_temp;
@@ -74,30 +73,33 @@ typedef struct s_pushswap
 	t_catalog	l_stack_b;
 }				t_pushswap;
 
-//in 000-main.c file
+//in 001-stack_initialitation.c
 void	*ft_node_creator(int nInt);
-//in 001-input_verification.c file
+void	ft_init_pushswap(t_pushswap *dPushswap, int nInputs, char **vInputs);
+//in 002-input_verification.c file
 int		ft_input_analizer(t_pushswap *dPushswap);
-//in 002-sorting_verification.c file
+//in 003-sorting_verification.c file
+int		ft_sorting_checker(t_pushswap *dPushswap);
 void	ft_serie_analizer(t_pushswap *dPushswap);
-//in 003-stacks_management.c file
+//in 004-stacks_management.c file
 void	ft_index_updater(t_catalog *pStack);
 void	ft_mintargets_finder(t_catalog *pRef, t_catalog pTrg);
 void	ft_maxtargets_finder(t_catalog *pRef, t_catalog pTrg);
 void	ft_cost_updater(t_catalog *pRef, t_catalog pTrg);
-//in 004-stacks_management.c file
+//in 005-stacks_management.c file
 void	ft_a2b_executions(t_pushswap *dPushswap);
 void	ft_update_stack(t_pushswap *dPushswap, char cDestiny);
-//in 005-push_operations.c file
-void	ft_push_onestack(t_pushswap *dPushswap, char cStack);
-void	ft_push_provision(t_pushswap *dPushswap, t_node *pGoal, char cMode);
-//in 006-rotative_operations.c file
-void	ft_rot_onestack(t_pushswap *dPushswap, char *sStack);
-void	ft_rot_twostack(t_pushswap *dPushswap);
-void	ft_rev_onestack(t_pushswap *dPushswap, char *sStack);
-void	ft_rev_twostack(t_pushswap *dPushswap);
-//in 007-swap_operations.c file
-void	ft_swap_onestack(t_pushswap *dPushswap, char *sStack);
-void	ft_swap_twostack(t_pushswap *dPushswap);
+//in 006-push_operations.c file
+void	ft_push_onestack(t_pushswap *dPushswap, char cStack, bool bPrint);
+void	ft_push_provision(t_pushswap *dPushswap, t_node *pGoal, char cMode,
+			bool bPrint);
+//in 007-rotative_operations.c file
+void	ft_rot_onestack(t_pushswap *dPushswap, char *sStack, bool bPrint);
+void	ft_rot_twostack(t_pushswap *dPushswap, bool bPrint);
+void	ft_rev_onestack(t_pushswap *dPushswap, char *sStack, bool bPrint);
+void	ft_rev_twostack(t_pushswap *dPushswap, bool bPrint);
+//in 008-swap_operations.c file
+void	ft_swap_onestack(t_pushswap *dPushswap, char *sStack, bool bPrint);
+void	ft_swap_twostack(t_pushswap *dPushswap, bool bPrint);
 #endif
 //END

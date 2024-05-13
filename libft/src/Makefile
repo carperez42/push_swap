@@ -6,14 +6,14 @@
 #    By: carperez <carperez@student.45madrid>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/25 13:25:56 by carperez          #+#    #+#              #
-#    Updated: 2024/05/02 10:04:57 by carperez         ###   ########.fr        #
+#    Updated: 2024/05/10 13:28:35 by carperez         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 #colors
-GREEN=\033[0;32m
+GREEN=\033[1;32m
 YELLOW=\033[0;33m
-BLUE=\033[0;34m
+BLUE=\033[1;34m
 NC=\033[0m
 
 #variable definition: static library name
