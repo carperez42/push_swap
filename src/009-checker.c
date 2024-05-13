@@ -6,7 +6,7 @@
 /*   By: carperez <carperez@student.45madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/10 12:55:28 by carperez          #+#    #+#             */
-/*   Updated: 2024/05/13 20:27:57 by carperez         ###   ########.fr       */
+/*   Updated: 2024/05/13 21:06:38 by carperez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ static void	ft_operation_checker(t_pushswap *dChecker, char *sOperation)
 		dChecker->f_error = 1;
 }
 
-static void	ft_line_capturer(t_pushswap *dChecker)
+static void	ft_operation_capturer(t_pushswap *dChecker)
 {
 	char	*s_operation;
 
@@ -62,7 +62,7 @@ static void	ft_serie_checker(t_pushswap *dChecker)
 
 	p_aux = &(dChecker->l_stack_b);
 	ft_init_catalog(&p_aux);
-	ft_line_capturer(dChecker);
+	ft_operation_capturer(dChecker);
 	if (dChecker->f_error)
 	{
 		ft_printf("\033[1;5;31m");
