@@ -74,23 +74,28 @@ static int	ft_digit_checker(t_pushswap *dPushswap)
 static int	ft_rep_checker(t_pushswap *dPushswap)
 {
 	char	*p_aux;
+	char	*p_aux2;
 	int		ia;
 
 	ia = 0;
 	while (dPushswap->a_temp[ia] && (!dPushswap->f_error))
 	{
-		p_aux = ft_strjoin_v2(dPushswap->a_temp[ia], " ");
-		p_aux = ft_strjoin_v2(" ", p_aux);
+		p_aux2 = ft_strjoin_v2(dPushswap->a_temp[ia], "_");
+		p_aux = ft_strjoin_v2("_", p_aux2);
+		free(p_aux2);
+		p_aux2 = NULL;
 		if (!(ft_strnstr(dPushswap->p_diglist, p_aux,
 					ft_strlen(dPushswap->p_diglist))))
 		{
-			dPushswap->p_diglist = ft_strjoin_v2(dPushswap->p_diglist, p_aux);
-			free(p_aux);
-			p_aux = NULL;
+			p_aux2 = ft_strjoin_v2(dPushswap->p_diglist, p_aux);
+			free(dPushswap->p_diglist);
+			dPushswap->p_diglist = p_aux2;
 			ia ++;
 		}
 		else
 			dPushswap->f_error = 3;
+		free(p_aux);
+		p_aux = NULL;
 	}
 	return (dPushswap->f_error);
 }
@@ -136,7 +141,7 @@ int	ft_input_analizer(t_pushswap *dPushswap)
 	n_dim = 0;
 	ia = 1;
 	dPushswap->p_diglist = malloc(sizeof(char));
-	*(dPushswap->p_diglist) = '\0';
+	ft_memcpy(dPushswap->p_diglist, "\0", 1);
 	while (ia < dPushswap->n_inputs && (!dPushswap->f_error))
 	{
 		dPushswap->a_temp = ft_split(dPushswap->a_inputs[ia], ' ');
